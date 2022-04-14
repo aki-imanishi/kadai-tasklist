@@ -18,11 +18,11 @@ class TasksController extends Controller
     public function index()
     {
         // メッセージ一覧を取得
-        $tasks = Task::all(); 
+        $tasks = Task::all(); //Taskはmodel名。all()はすべてのデータを取得。
 
         // メッセージ一覧ビューでそれを表示
-        return view('tasks.index', [
-            'tasks' => $tasks,
+        return view('tasks.index', [ //tasks.indexはbladeファイル名
+            'tasks' => $tasks, //$tasksには取得したall()のデータが入っている。これを'tasks'に代入。'tasks'はbladeファイル内で$tasksとして使用できる。
         ]);
     }
 
