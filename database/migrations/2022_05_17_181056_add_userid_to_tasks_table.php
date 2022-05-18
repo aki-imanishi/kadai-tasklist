@@ -14,9 +14,9 @@ class AddUseridToTasksTable extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id'); //userIDの追加
             
-        // 外部キー制約
+            // 外部キー制約
             $table->foreign('user_id')->references('id')->on('users');
     
         });
@@ -34,3 +34,4 @@ class AddUseridToTasksTable extends Migration
         });
     }
 }
+ 
